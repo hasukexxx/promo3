@@ -1,0 +1,64 @@
+.c_rows {
+
+  &__item {
+    padding: 20px 0;
+    box-shadow: inset 0px -1px 0px #E2E5EB;
+  }
+
+  &__key {
+    color: $neutral-300;
+    margin-bottom: 4px;
+  }
+
+  &__value {
+    @include body-M-14;
+  }
+
+  &__link {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: $m1024) {
+  .c_rows {
+
+    &__item {
+      display: flex;
+      padding: 32px 16px;
+    }
+
+    &__key {
+      min-width: 454px;
+      max-width: 454px;
+      padding-right: 102px;
+    }
+
+    &__value {
+      @include body-L-16;
+    }
+
+    &__link {
+      margin-top: 12px;
+    }
+  }
+}
+
+@media (min-width: $m1280) {
+  .c_rows {
+
+    &__key {
+      min-width: 400px;
+      max-width: 400px;
+    }
+  }
+}
+
+@media (min-width: $m1440) {
+  .c_rows {
+
+    &__key {
+      min-width: 448px;
+      max-width: 448px;
+    }
+  }
+}

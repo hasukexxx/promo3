@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  font-family: $ff-1;
+  color: $neutral-100;
+  @include body-M-14;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.hasPadding {
+  @include padding-LR;
+}
+
+h3.section-title {
+  @include h3;
+}
+
+h4.section-title {
+  @include h4;
+}
+
+.section-title {
+  margin-bottom: 24px;
+}
+
+/* Не переносить - START */
+
+a {
+  color: $blue-100;
+
+  &:hover {
+    color: $blue-300;
+  }
+}
+
+/* Не переносить - END */
+
+@media (min-width: $m768) {
+  .wrapper {
+    max-width: 738px;
+  }
+}
+
+@media only screen and (min-width: $m1024) {
+  .wrapper {
+    max-width: 876px;
+    @include body-L-16;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 1152px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    max-width: 1292px;
+  }
+}
+
+/* Для битрикса */
+.bg-gray.pdv-60px {
+  display: none;
+}

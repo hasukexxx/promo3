@@ -1,0 +1,518 @@
+.conditions {
+  margin-top: 52px;
+  overflow: hidden;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(414px, 1fr);
+  }
+
+  &__item {
+    transition: all 0.5s ease-in-out;
+    height: 414px;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      @include h3;
+    }
+
+    &-text {
+      @include body-L-16;
+      margin-top: 12px;
+    }
+
+    &.hover {
+      background: #000;
+      color: #fff;
+      height: auto;
+
+      .conditions__description {
+        display: block;
+      }
+      .conditions__image-block {
+        display: none;
+      }
+
+      .conditions__link svg {
+        transform: rotate(90deg);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &_1 {
+      background: #f5f6f7;
+    }
+    &_2 {
+      background: #ebecee;
+    }
+    &_3 {
+      background: #e0e3e6;
+    }
+    &_4 {
+      background: #f5f6f7;
+    }
+    &_5 {
+      background: #ebecee;
+      height: auto;
+      &.hover {
+        .conditions__image-block {
+          display: block;
+          background: url(../img/conditions/mobile5@2x.png) center no-repeat,
+            linear-gradient(to top, #fff 125px, #000 125px);
+          background-size: 414px auto, auto;
+        }
+      }
+    }
+  }
+
+  &__text-block {
+    padding: 24px 16px 0;
+  }
+
+  &__link-block {
+    margin-top: 16px;
+    padding: 0 16px;
+  }
+
+  &__link {
+    display: block;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+
+    svg {
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &__image-block {
+    transition: all 0.5s ease-in-out;
+    margin-top: auto;
+    img {
+      transition: all 0.5s ease-in-out;
+      margin: 0 auto;
+    }
+
+    &_big {
+      height: 335px;
+      background: url(../img/conditions/mobile5@2x.png) center no-repeat,
+        linear-gradient(to top, #fff 125px, #ebecee 125px);
+      background-size: 414px auto, auto;
+    }
+  }
+
+  &__subtitle {
+    @include h5;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    display: none;
+    padding: 0 16px 24px;
+    margin-top: 24px;
+
+    ol,
+    ul {
+      display: grid;
+      row-gap: 12px;
+    }
+
+    ul {
+      li {
+        @include li;
+        padding-left: 16px;
+        &::before {
+          background: #fff;
+        }
+      }
+    }
+
+    ol {
+      li {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-template-rows: auto;
+        column-gap: 16px;
+
+        &::before {
+          background: url(../img/bullet1.svg);
+          width: 24px;
+          height: 24px;
+          top: 0;
+        }
+
+        .counter {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 24px;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: $m414) {
+  .conditions {
+    &__image-block {
+      &_big {
+        background: url(../img/conditions/mobile5@2x.png) center no-repeat,
+          linear-gradient(to top, #fff 80px, #ebecee 80px);
+        background-size: 414px auto, auto;
+      }
+    }
+  }
+}
+
+@media (min-width: $m1024) {
+  .conditions {
+    margin-top: 64px;
+
+    &__grid {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(6, 312px) 1fr;
+      grid-template-areas:
+        'item_1 item_2'
+        'item_1 item_2'
+        'item_3 item_2'
+        'item_3 item_4'
+        'item_3 item_4'
+        'item_5 item_5'
+        'item_5 item_5';
+    }
+
+    &__item {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      &:hover,
+      &.hover {
+        background: #000;
+        color: #fff;
+        .conditions__description {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          align-items: baseline;
+        }
+        .conditions__image-block {
+          opacity: 0;
+          display: none;
+        }
+
+        .conditions__link svg {
+          transform: rotate(90deg);
+          transition: all 0.5s ease-in-out;
+        }
+      }
+
+      &_1 {
+        grid-area: item_1;
+        background: linear-gradient(to right, #fff 32px, #f5f6f7 32px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to right, #fff 32px, #000 32px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 32px;
+        }
+      }
+      &_2 {
+        grid-area: item_2;
+        background: linear-gradient(to left, #fff 32px, #ebecee 32px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to left, #fff 32px, #000000 32px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 32px;
+        }
+        .conditions__image-block {
+          img {
+            margin-left: auto;
+          }
+        }
+      }
+      &_3 {
+        grid-area: item_3;
+        background: linear-gradient(to right, #fff 32px, #e0e3e6 32px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to right, #fff 32px, #000000 32px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 32px;
+        }
+        .conditions__image-block {
+          img {
+            margin-left: 0;
+          }
+        }
+      }
+      &_4 {
+        grid-area: item_4;
+        background: linear-gradient(to left, #fff 32px, #f5f6f7 32px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to left, #fff 32px, #000000 32px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 32px;
+        }
+        .conditions__image-block {
+          img {
+            margin-left: auto;
+          }
+        }
+      }
+      &_5 {
+        position: relative;
+        grid-area: item_5;
+        background: linear-gradient(to top, #fff 115px, #ebecee 115px);
+        margin: 0 32px;
+        min-height: 738px;
+
+        .conditions__image-block {
+          width: 957px;
+          margin: 0 auto;
+        }
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to top, #fff 115px, #000000 115px);
+          .conditions__image-block {
+            display: block;
+            position: absolute;
+            top: 140px;
+            left: 170px;
+            transition: all 0.5s linear;
+            background: none;
+          }
+        }
+      }
+
+      &-text {
+        @include body-XL-20;
+      }
+
+      .conditions__text-block,
+      .conditions__description {
+        max-width: 520px;
+      }
+    }
+
+    &__text-block {
+      padding: 32px 24px 0;
+    }
+
+    &__link-block {
+      display: none;
+      background: url(../img/conditions/mobile5@2x.png) center no-repeat,
+        linear-gradient(to top, #fff 80px, #ebecee 80px);
+      background-size: contain;
+    }
+
+    &__image-block {
+      margin-top: auto;
+      &_big {
+        height: 566px;
+        background: none;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__description {
+      margin-top: 32px;
+      padding: 0 24px 32px;
+
+      ul li::before {
+        width: 4px;
+        height: 4px;
+        top: 10px;
+      }
+    }
+
+    &__btn {
+      margin-top: auto;
+    }
+  }
+}
+
+@media (min-width: $m1280) {
+  .conditions {
+    &__grid {
+      grid-template-rows: repeat(6, 312px) 754px;
+    }
+
+    &__text-block,
+    &__description {
+      padding-left: 32px;
+    }
+
+    &__item {
+      &-title {
+        @include h2;
+      }
+
+      &_1 {
+        background: linear-gradient(to right, #fff 70px, #f5f6f7 70px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to right, #fff 70px, #000 70px);
+        }
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 70px;
+        }
+      }
+      &_2 {
+        background: linear-gradient(to left, #fff 70px, #ebecee 70px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to left, #fff 70px, #000 70px);
+        }
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 70px;
+        }
+      }
+      &_3 {
+        background: linear-gradient(to right, #fff 70px, #e0e3e6 70px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to right, #fff 70px, #000 70px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 70px;
+        }
+      }
+      &_4 {
+        background: linear-gradient(to left, #fff 70px, #f5f6f7 70px);
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to left, #fff 70px, #000 70px);
+        }
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 70px;
+        }
+      }
+      &_5 {
+        background: linear-gradient(to top, #fff 115px, #ebecee 115px);
+        margin: 0 70px;
+        min-height: 710px;
+        height: 754px;
+
+        .conditions__text-block {
+          max-width: 776px;
+        }
+        .conditions__item-text {
+          max-width: 620px;
+        }
+        .conditions__description {
+          max-width: 676px;
+        }
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to top, #fff 115px, #000000 115px);
+          height: fit-content;
+          .conditions__image-block {
+            left: 400px;
+            top: 156px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $m1440) {
+  .conditions {
+    &__item {
+      &:hover,
+      &.hover {
+        background: #000;
+      }
+      &_1 {
+        background: #f5f6f7;
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 0;
+        }
+      }
+      &_2 {
+        background: #ebecee;
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 0;
+        }
+      }
+      &_3 {
+        background: #e0e3e6;
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-left: 0;
+        }
+      }
+      &_4 {
+        background: #f5f6f7;
+
+        .conditions__text-block,
+        .conditions__description {
+          margin-right: 0;
+        }
+      }
+      &_5 {
+        margin: 0;
+
+        &:hover,
+        &.hover {
+          background: linear-gradient(to top, #fff 115px, #000000 115px);
+          height: 754px;
+          .conditions__image-block {
+            left: 400px;
+          }
+        }
+      }
+    }
+  }
+}

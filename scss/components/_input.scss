@@ -1,0 +1,22 @@
+.form-input {
+  font-family: $ff-1;
+  @include body-L-16;
+  outline: none;
+  border: 2px solid $neutral-500;
+  border-radius: 4px;
+  padding: 13px 20px;
+  width: 100%;
+
+  &:hover {
+    border-color: $neutral-400;
+  }
+  &:focus {
+    border-color: $neutral-200;
+  }
+  
+  &:disabled {
+    background-color: $neutral-700;
+    border: none;
+    padding: 15px 20px;
+  }
+}
